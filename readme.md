@@ -1,3 +1,8 @@
+#Tejas Tank
+
+For RSSI with differnt data I found ""Kalman filter"" gives most smooth filter compare to other filter.
+
+
 # Filtering strategies for RSSI signal prediction
 
 Implementation of all filtering strategies described in [1] to filter a noisy RSSI signal. 

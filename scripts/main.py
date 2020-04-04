@@ -28,6 +28,5 @@ signal_particle_filter = particle_filter(signal, quant_particles=100, A=1, H=1, 
 
 # plot signal and filters
 
-plot_signals([signal, signal_gray_filter, signal_fft_filter, signal_kalman_filter, signal_particle_filter],
-             ['signal', 'gray_filtered_signal', 'fft_filtered_signal', 'kalman_filtered_signal',
-              'particles_filtered_signal'])
+plot_signals([signal,    signal_gray_filter, signal_fft_filter,               signal_kalman_filter, signal_particle_filter],
+             ['Signal', 'Grey filter',       'Fourier Transform filter(fft)', 'Kalman filter',      'Particles filter'    ])

@@ -160,7 +160,7 @@ def kalman_block(x, P, s, A, H, Q, R):
 
 
 def kalman_filter(signal, A, H, Q, R):
-
+    print(signal, A, H, Q, R, "Argument")
     """
 
     Implementation of Kalman filter.
@@ -181,10 +181,13 @@ def kalman_filter(signal, A, H, Q, R):
     P = 0                                         # set first covariance state value to zero
 
     predicted_signal.append(x)
-    for j, s in enumerate(signal[1:]):            # iterates on the entire signal, except the first element
-
+    flag = True
+    for s in signal:            # iterates on the entire signal, except the first element
+        if flag: #code improve to save memory, signal[1:] in case big size, makes trouble.
+            flag = False
+            continue
         x, P = kalman_block(x, P, s, A, H, Q, R)  # calculates next state prediction
-
+ 
         predicted_signal.append(x)                # update predicted signal with this step calculation
 
     return predicted_signal
